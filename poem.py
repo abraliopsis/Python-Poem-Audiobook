@@ -1,3 +1,4 @@
+import random
 import pyttsx
 import os
 import pygame
@@ -47,14 +48,20 @@ And that has made all the difference."""
 poemSplit1 = poem1.split('\n')
 poemSplit2 = poem2.split('\n')
 
+voices = ["Alex", "Alice", "Alva", "Amelie", "Anna", "Carmit", "Damayanti", "Daniel", "Diego", "Ellen", "Fiona", "Fred", "Ioana", "Joana", "Jorge", "Juan", "Kanya", "Karen", "Kyoko", "Laura", "Lekha", "Luca", "Luciana", "Maged", "Mariska", "Mei-Jia", "Melina", "Milena", "Moira", "Monica", "Nora", "Paulina", "Samantha", "Sara", "Satu", "Sin-ji", "Tessa", "Thomas", "Ting-Ting", "Veena", "Victoria", "Xander", "Yelda", "Yuna", "Yuri", "Zosia", "Zuzana"]
+
+def getName():
+	return random.choice(voices)
+	
+
 for i in poemSplit1:	
 	print i	+ "\n"
-	os.system("say " + i)
+	os.system("say -v " + getName() + " " + i)
 	time.sleep(.1)
 
 print "-------------------------"
 
 for i in poemSplit2:
 	print i + "\n"
-	os.system("say " + i)
+	os.system("say -v " + getName() + " " + i)
 	time.sleep(.1)
